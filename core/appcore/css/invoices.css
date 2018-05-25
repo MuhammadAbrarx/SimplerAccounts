@@ -1,0 +1,158 @@
+/*
+	Preview Invoice Start
+
+*/
+
+.invoice_container {
+    margin: 5% 0% 0% 0%;
+    float: left;
+    width: 100%;
+    box-shadow: 0 0 5px #aaa;
+    height: auto;
+    color: #666;
+}
+.invoice_title {
+    width: 100%;
+    padding: 10px;
+    float: left;
+    background: #1ca8dd;
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+}
+.invoice_segment_top {
+    width: 100%;
+    padding: 0px 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    float: left;
+}
+.invoice_customer {
+    width: 30%;
+    float: left;
+    padding: 10px;
+}
+.invoice_customer_name {
+    font-size: 14px;
+    float: left;
+    width: 100%;
+}
+.invoice_customer_address {
+    font-size: 14px;
+    float: left;
+    width: 100%;
+}
+.invoice_customer_mail {
+    font-size: 14px;
+    float: left;
+    width: 100%;
+}
+.invoice_identifier {
+    width: 40%;
+    float: right;
+    padding:
+}
+.invoice_date {
+    font-size: 14px;
+    float: right;
+    padding: 10px;
+    text-align: right;
+}
+.invoice_id {
+    font-size: 14px;
+    float: right;
+    padding: 10px;
+    text-align: right;
+}
+.invoice_segment_bottom {
+    width: 100%;
+    padding: 0px;
+    float: left;
+}
+.invoice_description_title_container {
+    width: 100%;
+    float: left;
+    background: #efefef;
+}
+.invoice_description_title {
+    float: left;
+    text-align: left;
+    padding: 10px;
+    width: 50%;
+    color: #888;
+    font-weight: 600;
+}
+.invoice_description_amount {
+    font-weight: 600;
+    float: left;
+    padding: 10px;
+    width: 40%;
+    color: #888;
+    text-align: right;
+
+
+}
+.invoice_item_container {
+    width: 100%;
+    float: left;
+}
+.invoice_item_name {
+    float: left;
+    text-align: left;
+    padding: 10px;
+    width: 50%;
+    color: #888;
+}
+.invoice_item_brief {
+    font-size: 10px;
+    float: left;
+    width: 100%;
+}
+.invoice_item_price {
+    font-weight: normal;
+    float: left;
+    padding: 10px;
+    width: 40%;
+    color: #888;
+    text-align: right;
+}
+.invoice_item_container {
+    width: 100%;
+    float: left;
+}
+.invoice_item_name {
+    float: left;
+    text-align: left;
+    padding: 10px;
+    width: 50%;
+    color: #888;
+}
+.invoice_item_brief {
+    font-size: 10px;
+    float: left;
+    width: 100%;
+}
+.invoice_item_price {
+    font-weight: normal;
+    float: left;
+    padding: 10px;
+    width: 40%;
+    color: #888;
+    text-align: right;
+}
+.invoice_bill_title {
+    width: 100%;
+    float: left;
+    background: #fff;
+}
+.invoice_bill_total {
+    font-weight: 600;
+    float: right;
+    padding: 10px 0px;
+    width: 40%;
+    color: #666;
+    text-align: center;
+}
+/*
+	Preview Invoice End
+
+*/

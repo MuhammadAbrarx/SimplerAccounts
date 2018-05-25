@@ -1,0 +1,98 @@
+/* Fonts */
+
+
+/*Default Components*/
+li {
+        /*display:inline-block;*/
+        /*margin-right:10px;*/
+}
+
+html ,body,.full-height
+{
+    height: 100%;
+    background-color: #e0e0e0;
+}
+
+button
+{
+	margin-bottom:1px;
+	margin-top: 1px;
+
+}
+
+/*overriden class*/
+.btn-block + .btn-block {
+    /*margin-top: .5rem;*/
+    margin-top: 0rem;
+
+
+}
+
+.segment-left{
+    background-color: grey;
+    border: 2px solid white;
+  border-radius: 1%;
+}
+
+.segment-mid{
+    /*background-color: blue;*/
+    
+}
+
+.segment-right{
+    background-color: grey;
+    border: 2px solid white;
+  border-radius: 1%;
+    
+}
+
+.segment-left .segment-right .segment-mid
+{
+    /*height: 100%;*/
+}
+
+
+.menu
+{
+    
+}
+
+.main-content
+{
+    
+}
+
+.notification
+{
+    
+}
+
+.logo-container{
+    background-color: purple;
+    margin: 10% 0 5% 0;
+    border: 2px solid white;
+  border-radius: 10%;
+}
+
+.menu-chart
+{
+    margin: 10% 0 2.5% 0;
+    padding: 10% 5% 10% 5%;
+    /*border: 2px solid white;*/
+    border-radius: 2%;
+    background-color: #323e51;
+}
+
+
+
+.menu-button
+{
+	/*margin: 1% 0 1% 0;*/
+}
+
+.displayer
+{
+    background-color: purple;
+}
+
+

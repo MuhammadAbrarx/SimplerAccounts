@@ -60,6 +60,21 @@
     // window.$ = window.jQuery = require("js/jquery-3.3.1.min.js");
     window.$ = window.jQuery = require('jquery');
     require('./core/appcore/js/appmain.js');//the renderer process
+
+    // test mysql
+    var mysql = require('mysql');
+
+    var connection = mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      // database: 'the_app_database'
+    });
+
+    connection.connect(function (err) {
+      if (err) throw err
+      console.log('You are now connected...')
+    });
   </script>
 
   <!-- <script type="text/javascript" src="core/libs/js/popper.min.js"></script> -->

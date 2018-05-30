@@ -1,6 +1,6 @@
 {
   "name": "SimplerAccounts",
-  "version": "1.0.0",
+  "version": "0.0.7",
   "description": "A companion to ease your life through allowing you to keep track of your accounts in a simpler manner .",
   "main": "main.js",
   "scripts": {
@@ -18,9 +18,9 @@
     "electron": "^1.8.6",
     "express": "^4.16.3",
     "express-rate-limit": "^2.11.0",
+    "mysql": "^2.15.0",
     "helmet": "^3.12.1",
-    "jquery": "^3.3.1",
-    "mysql": "^2.15.0"
+    "jquery": "^3.3.1"
   },
   "devDependencies": {
     "electron-packager": "^12.0.1",

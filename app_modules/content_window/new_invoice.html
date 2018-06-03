@@ -1,4 +1,24 @@
-<div class="container">
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style>
+      #tab_logic .form-control[readonly],#tab_logic_total .form-control[readonly] {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0 10px;
+    font-size: 15px;
+}
+  </style>
+  <!------ Include the above in your HEAD tag ---------->
+</head>
+
+<body>
+  <div class="container">
     <div class="row clearfix">
       <div class="col-md-12">
         <table class="table table-bordered table-hover" id="tab_logic">
@@ -12,14 +32,19 @@
             </tr>
           </thead>
           <tbody>
-            <tr id='addr0'>
+            <tr id="addr0">
               <td>1</td>
-              <td><select class="form-control" name='product[]' onChange="option_checker(this);"></select></td>
-              <td><input type="number" name='qty[]' placeholder='Enter Qty' class="form-control qty" step="0" min="0"/></td>
-              <td><input type="number" name='price[]' placeholder='Enter Unit Price' class="form-control price" step="0.00" min="0"/></td>
-              <td><input type="number" name='total[]' placeholder='0.00' class="form-control total" readonly/></td>
+              <td>
+                <select class="form-control" name="product[]" onchange="option_checker(this);"></select>
+              </td>
+              <td>
+                <input type="number" name="qty[]" placeholder="Enter Qty" class="form-control qty" step="0" min="0"> </td>
+              <td>
+                <input type="number" name="price[]" placeholder="Enter Unit Price" class="form-control price" step="0.00" min="0"> </td>
+              <td>
+                <input type="number" name="total[]" placeholder="0.00" class="form-control total" readonly=""> </td>
             </tr>
-            <tr id='addr1'></tr>
+            <tr id="addr1"></tr>
           </tbody>
         </table>
       </div>
@@ -27,7 +52,7 @@
     <div class="row clearfix">
       <div class="col-md-12">
         <button id="add_row" class="btn btn-default pull-left">Add Row</button>
-        <button id='delete_row' class="pull-right btn btn-default">Delete Row</button>
+        <button id="delete_row" class="pull-right btn btn-default">Delete Row</button>
       </div>
     </div>
     <div class="row clearfix" style="margin-top:20px">
@@ -36,25 +61,120 @@
           <tbody>
             <tr>
               <th class="text-center">Sub Total</th>
-              <td class="text-center"><input type="number" name='sub_total' placeholder='0.00' class="form-control" id="sub_total" readonly/></td>
+              <td class="text-center">
+                <input type="number" name="sub_total" placeholder="0.00" class="form-control" id="sub_total" readonly=""> </td>
             </tr>
             <tr>
               <th class="text-center">Tax</th>
-              <td class="text-center"><div class="input-group mb-2 mb-sm-0">
+              <td class="text-center">
+                <div class="input-group mb-2 mb-sm-0">
                   <input type="number" class="form-control" id="tax" placeholder="0">
                   <div class="input-group-addon">%</div>
-                </div></td>
+                </div>
+              </td>
             </tr>
             <tr>
               <th class="text-center">Tax Amount</th>
-              <td class="text-center"><input type="number" name='tax_amount' id="tax_amount" placeholder='0.00' class="form-control" readonly/></td>
+              <td class="text-center">
+                <input type="number" name="tax_amount" id="tax_amount" placeholder="0.00" class="form-control" readonly=""> </td>
             </tr>
             <tr>
               <th class="text-center">Grand Total</th>
-              <td class="text-center"><input type="number" name='total_amount' id="total_amount" placeholder='0.00' class="form-control" readonly/></td>
+              <td class="text-center">
+                <input type="number" name="total_amount" id="total_amount" placeholder="0.00" class="form-control" readonly=""> </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:250px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;
+    <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+  </pingendo>
+</body>
+<script>
+    $(document).ready(function(){
+	
+	option_list('addr0');
+	
+    var i=1;
+    $("#add_row").click(function(){b=i-1;
+      	$('#addr'+i).html($('#addr'+b).html()).find('td:first-child').html(i+1);
+      	$('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
+		option_list('addr'+i);
+      	i++; 
+  	});
+    $("#delete_row").click(function(){
+    	if(i>1){
+		$("#addr"+(i-1)).html('');
+		i--;
+		}
+		calc();
+	});
+	
+	$(".product").on('change',function(){
+	    option_checker(this)
+	});
+	
+	
+	$('#tab_logic tbody').on('keyup change',function(){
+		calc();
+	});
+	$('#tax').on('keyup change',function(){
+		calc_total();
+	});
+
+});
+
+function option_checker(id)
+{
+	var myOption=$(id).val();
+	var s =0;
+	$('#tab_logic tbody tr select').each(function(index, element){
+         var myselect = $(this).val();
+		if(myselect==myOption){
+			s += 1;
+		}
+    });
+	if(s>1){
+		alert(myOption+' as been added already try new..')	
+	}
+}
+
+function option_list(id)
+{
+	el='#'+id;
+	var myArray = ["Product 1", "Product 2", "Product 3", "Product 4"];
+	var collect = '<option value="">Select Product</option>';
+    for(var i = 0; i<myArray.length;i++){
+        collect += '<option value="'+myArray[i]+'">'+myArray[i]+'</option>';
+    }
+    $(el+" select").html(collect);
+}
+
+function calc()
+{
+	$('#tab_logic tbody tr').each(function(i, element) {
+		var html = $(this).html();
+		
+			var qty = $(this).find('.qty').val();
+			var price = $(this).find('.price').val();
+			$(this).find('.total').val(qty*price);
+			
+			calc_total();
+    });
+}
+
+function calc_total()
+{
+	total=0;
+	$('.total').each(function() {
+        total += parseInt($(this).val());
+    });
+	$('#sub_total').val(total.toFixed(2));
+	tax_sum=total/100*$('#tax').val();
+	$('#tax_amount').val(tax_sum.toFixed(2));
+	$('#total_amount').val((tax_sum+total).toFixed(2));
+}
+</script>
+</html>

@@ -17,6 +17,7 @@
     "cross-env": "*",
     "electron": "*",
     "express": "*",
+    "body-parser":"*",
     "express-rate-limit": "*",
     "mysql": "*",
     "helmet": "*",

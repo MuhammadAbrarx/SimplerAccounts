@@ -13,15 +13,15 @@
   "license": "ISC",
   "dependencies": {
     "admin-lte": "*",
+    "body-parser": "*",
     "cors": "*",
     "cross-env": "*",
     "electron": "*",
     "express": "*",
-    "body-parser":"*",
     "express-rate-limit": "*",
-    "mysql": "*",
     "helmet": "*",
-    "jquery": "*"
+    "jquery": "*",
+    "mysql": "*"
   },
   "devDependencies": {
     "electron-packager": "*",

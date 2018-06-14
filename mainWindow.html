@@ -35,7 +35,7 @@
         <div id="menuleft"></div>
       </div>
 
-      <div class="col segment-mid main-content">
+      <div class="col-8 segment-mid main-content">
         <div id="main-content"></div>
       </div>
 
@@ -59,7 +59,8 @@
   <script>
     // window.$ = window.jQuery = require("js/jquery-3.3.1.min.js");
     window.$ = window.jQuery = require('jquery');
-    require('./core/appcore/js/appmain.js');//the renderer process
+    require('./dist/bundle.js');//the renderer process
+    // require('./core/appcore/js/appmainrenderer.js');//the renderer process
 
     // test mysql
     var mysql = require('mysql');

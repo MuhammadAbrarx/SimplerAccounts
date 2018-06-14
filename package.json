@@ -21,7 +21,8 @@
     "express-rate-limit": "*",
     "helmet": "*",
     "jquery": "*",
-    "mysql": "*"
+    "mysql": "*",
+    "update-electron-app": "^1.3.0"
   },
   "devDependencies": {
     "css-loader": "*",

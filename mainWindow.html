@@ -27,10 +27,9 @@
 
 <body>
   <!-- <h1 class="text-center">Hello Simpler Accounts User</h1> -->
-  <div class="container-fluid full-height">
+  <!-- <div class="container-fluid full-height">
 
     <div class="row full-height">
-      <!-- All the menus here -->
       <div class="col-2 segment-left menu">
         <div id="menuleft"></div>
       </div>
@@ -44,6 +43,15 @@
       </div>
 
     </div>
+
+  </div> -->
+  <div class="wrapper full-height">
+
+    <div id="menuleft" class="segment-left menu full-height"></div>
+
+    <div id="main-content" class="segment-mid main-content full-height"></div>
+
+    <div id="menuright" class="segment-right notification full-height"></div>
 
   </div>
 
@@ -74,15 +82,15 @@
     connection.connect(function (err) {
       if (err) throw err
       console.log('You are now connected...');
-    //   console.log({
-    // host            : process.env.MYSQL_HOST,
-    // user            : process.env.MYSQL_USER,
-    // password        : process.env.MYSQL_SECRET
-    // // database        : process.env.MYSQL_DB
-    // });
+      //   console.log({
+      // host            : process.env.MYSQL_HOST,
+      // user            : process.env.MYSQL_USER,
+      // password        : process.env.MYSQL_SECRET
+      // // database        : process.env.MYSQL_DB
+      // });
     });
 
-    
+
   </script>
 
   <!-- <script type="text/javascript" src="core/libs/js/popper.min.js"></script> -->

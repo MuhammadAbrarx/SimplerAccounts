@@ -13,6 +13,17 @@ html ,body,.full-height
     background-color: #e0e0e0;
 }
 
+.wrapper
+{
+    /* border: 5px solid #ffcc5c; */
+    display:grid;
+    grid-template-columns: 17.5% auto 17.5%;
+    grid-template-rows: 100%;
+    grid-gap:1%;
+    /* justify-items: center; */
+    /* align-items: center; */
+}
+
 button
 {
 	margin-bottom:1px;

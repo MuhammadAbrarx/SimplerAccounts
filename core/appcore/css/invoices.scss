@@ -1,6 +1,5 @@
 /*
 	Preview Invoice Start
-
 */
 
 .invoice_container {
@@ -26,6 +25,8 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     float: left;
 }
+
+// invoice customer info
 .invoice_customer {
     width: 30%;
     float: left;
@@ -46,10 +47,12 @@
     float: left;
     width: 100%;
 }
+
+//invoice tracing infos
 .invoice_identifier {
     width: 40%;
     float: right;
-    padding:
+    padding: 10px;
 }
 .invoice_date {
     font-size: 14px;

@@ -13,6 +13,8 @@
   <!-- <link type="text/css" rel="stylesheet" href="core/libs/css/adminlte.min.css"> -->
   <link type="text/css" rel="stylesheet" href="core/appcore/css/main.css">
   <link type="text/css" rel="stylesheet" href="core/appcore/css/invoices.css">
+  <!-- Generated -->
+  <link type="text/css" rel="stylesheet" href="dist/style.css"> 
 
 
 
@@ -45,7 +47,7 @@
     </div>
 
   </div> -->
-  
+
   <div class="wrapper full-height">
 
     <div id="menuleft" class="segment-left menu full-height"></div>
@@ -68,8 +70,10 @@
   <script>
     // window.$ = window.jQuery = require("js/jquery-3.3.1.min.js");
     window.$ = window.jQuery = require('jquery');
-    require('./dist/bundle.js');//the renderer process
-    // require('./core/appcore/js/appmainrenderer.js');//the renderer process
+    require('./core/appcore/js/appmainrenderer.js');//the renderer process
+    // Generated //
+    // require('./dist/vendors.js'); // All vendors combined
+    // require('./dist/bundle.js');
 
     // test mysql
     var mysql = require('mysql');
@@ -97,7 +101,7 @@
 
   <!-- <script type="text/javascript" src="core/libs/js/popper.min.js"></script> -->
   <script type="text/javascript" src="core/libs/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="core/libs/js/flat-ui.min.js"></script>
+  <!-- <script type="text/javascript" src="core/libs/js/flat-ui.min.js"></script> -->
   <!-- <script type="text/javascript" src="core/libs/js/adminlte.min.js"></script> -->
   <!-- <script type="text/javascript" src="core/appcore/js/appmain.js"></script> -->
   <!-- Insert this line after script imports -->

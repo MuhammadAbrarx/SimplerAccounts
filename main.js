@@ -46,33 +46,6 @@ app.on('ready',function(){
 
 });
 
-
-//Handle Add/Create New Invoice
-// function createPreviewNewOldInvoiceWindow()
-// {
-// 	//create new window
-// 	newInvoiceWindow = new BrowserWindow();
-// 	//Load main window here
-// 	newInvoiceWindow.loadURL(url.format(
-// 	{
-// 		pathname: path.join(__dirname,'app_modules/content_window/preview_invoice.html'),
-// 		protocol: 'file:',
-// 		slashes: true
-// 	}));//this basically is passing file://dirname/PreviewWindow.html
-
-// 	//Garbage collection , close memory leaks
-// 	newInvoiceWindow.on('close',function()
-// 	{
-// 		newInvoiceWindow = null;
-// 	});
-
-// 	//Building Menu from template
-// 	// const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
-
-// 	//Insert the menu
-// 	// Menu.setApplicationMenu(mainMenu);
-// }
-
 //Create menu template
 const mainMenuTemplate = [
 

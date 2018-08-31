@@ -1,8 +1,87 @@
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Name</label>  
-  <div class="col-md-4">
-  <input id="textinput" name="textinput" placeholder="Nick name" class="form-control input-md" type="text">
-    
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/new_contact.css" type="text/css"> </head>
+
+<body>
+  <div class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-1"> </div>
+        <div class="col-10">
+          <div class="card text-white p-5 bg-primary">
+            <div class="card-body">
+              <h3 class="mb-4">Create Contact</h3>
+              <!-- <form action="crud.php" id="collapsed-advanced-options"> -->
+              <form id="collapsed-advanced-options">
+                
+                <div class="form-group">
+                  <label>Name</label>
+                  <div class="form-name horizontal">
+                    <input id="nameFirst" type="text" class="form-control" placeholder="First">
+                    <input id="nameMid" type="text" class="form-control" placeholder="Mid">
+                    <input id="nameLast" type="text" class="form-control" placeholder="Last"> </div>
+                </div>
+
+                <div class="form-group">
+                  <label>Nicename</label>
+                  <input id="nickName" type="text" class="form-control" placeholder="Nickname"> </div>
+                  
+                <div class="form-group">
+                  <label>Mobile</label>
+                  <input id="mobileNumber" type="mobile" class="form-control" placeholder="number"> </div>
+
+                <div class="btn-group vertical">
+                  <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"> Select Category </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Category 1</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Category 2</a>
+                  </div>
+                </div>
+
+                <!-- To be edited later advanced options like address etc -->
+                <!-- <div class="collapsedAdvancedOptions">
+                  <div class="card">
+                    <div class="card-header" id="advancedOptions">
+                      <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#advanceOptionsBody"> Advanced (Expand Other Func) </button>
+                      </h5>
+                    </div>
+                    <div id="advanceOptionsBody" class="collapse" data-parent="#collapsedAdvancedOptions">
+                      <div class="card-body"> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
+                        sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                        occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. </div>
+                    </div>
+                  </div>
+                </div> -->
+                <!-- <input id="btnCreateContact" type="submit" value="Add" class="btn btn-secondary"> -->
+              </form>
+              <button id="btnCreateContact" class="btn btn-secondary">Add</button>
+
+            </div>
+          </div>
+        </div>
+        <div class="col-1"> </div>
+      </div>
+    </div>
   </div>
-</div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script>
+    const path = require('path');
+    let contactsJsPath = path.join(__dirname,'app_modules/content_window/js/contacts.js');
+    // let finalJsPath = path.join(jsPath,'app_modules/content_window/js/contacts.js');
+    // require(finalJsPath);
+    console.log(contactsJsPath);
+    // require('./js/contacts.js');
+    require(contactsJsPath);
+  </script>
+</body>
+
+</html>

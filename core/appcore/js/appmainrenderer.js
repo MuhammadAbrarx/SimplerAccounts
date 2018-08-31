@@ -33,7 +33,7 @@ $("#menuright").load("app_modules/notification/notification.html");
 // Document ready function is a must as it ensures the default window has finished loading
 $(document).ready(function() {
   ///// Capturing all clicks in the document /////
-  $(document).on("click", function(clickedEvent) {
+  document.addEventListener("click", function(clickedEvent) {
     // let returnedHtml;
     // let searchUrl= "./app_modules/content_window/preview_invoice.html";//modify to this to change the file.html to desired.html
     // $.get(searchUrl, function(returnedHtml) {
@@ -46,10 +46,22 @@ $(document).ready(function() {
     try {
       //mainly clicked event is an object I can access
       let btnValue = clickedEvent.target.attributes.value.value;
-
+      let btnId = clickedEvent.target.id;
+      let btnParentId = clickedEvent.target.parentElement.id;
+      let grandParentId = document.getElementById(btnParentId).parentElement.id;
+      let mainContainerId = document.getElementById(grandParentId).parentElement.id;
+      // let btnClass = $(clickedEvent.target).attr('class');
+      // let btnDataParent = $(clickedEvent.target).data("parent").value;
+      // let btnDataParent = clickedEvent.target.attributes.data-parent.value;
       // Use Case of the function
       // Loading Windows on button click
-
+      if(mainContainerId!= null)
+      {
+        if(mainContainerId=='menuleft')
+        {
+          
+        }
+      }
       if (btnValue != null) {
         // console.log($(clickedEvent.target)); //this is to see the availabe method& variables i can access
         // console.log(btnValue); //this is an example of above
@@ -61,12 +73,16 @@ $(document).ready(function() {
         console.log("The Complete Url Directory of The Main Content to load "+urlCompleteStr);
         // This is always designed to be main-container
         $("#main-content").load(urlCompleteStr);
+        // console.log(clickedEvent);
+        // console.log(mainContainerId);
       }
+      // else if()
 
       // console.log($(clickedEvent.target).text());// here this equals document
       // console.log($(clickedEvent.target).is("#all"));// here this equals document
     } catch (err) {
       console.log("Button value is empty");
+     
     }
   });
 });
